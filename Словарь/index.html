@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Словарь</title>
+    <style>
+        body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid grey;
+            width: auto;
+            border-radius: 10px;
+        }
+        input {
+            margin: 10px;
+            width: auto;
+            border-radius: 10px;
+        }
+        textarea {
+            margin: 10px;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="wordName" placeholder="Слово">
+        <textarea name="wordDescription" id="wordDescription"></textarea>
+        <button id="addWord">Добавить</button>
+        <ul id="wordList"></ul>
+    </div>
+    <script>
+        const wordNameInput = document.getElementById('wordName');
+        const wordDescriptionInput = document.getElementById('wordDescription');
+        const addWord = document.getElementById('addWord');
+        const addWwordList = document.getElementById('wordList');
+
+        function addWord() {
+            const name = wordNameInput.value.trim();
+            const description = wordDescriptionInput.value.trim();
+
+            if (name === '' || description === '') {
+                alert('Пожалуйста, заполните все поля');
+                return;
+            }
+
+            const li = document.createElement(li);
+            li.className = 'wordList'
+            li.innerHTML = 
+            `<div class="wordsLi">
+             <h3>Словарь</h3>
+             <p>${name} - ${description}</p>
+            </div`
+
+            wordList.appendChild(li);
+
+        }
+        addWord.onclick = addWord;
+    </script>
+</body>
+</html>
