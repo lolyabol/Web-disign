@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: calc(80px * 3);
+            border: 1px solid grey;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        button {
+            width: 80px;
+            height: 80px;
+        }
+        input {
+            width: 97%;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="calc">
+        <div class="buttons">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>0</button>
+            <button>+</button>
+            <button>-</button>
+            <button>*</button>
+            <button>/</button>
+            <button>=</button>
+        </div>
+    </div>
+    <script>
+        const calcInput = document.getElementById('calc');
+
+        function calcNumber() {
+            
+        }
+    </script>
+</body>
+</html>

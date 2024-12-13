@@ -12,38 +12,62 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background-image: url(https://cdn.culture.ru/images/8b70a51a-6a72-56ea-beef-2f1b39b51989);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-color: #d69f4f;
             border: 1px solid grey;
             width: auto;
             border-radius: 10px;
+            padding: 20px; 
         }
-        input {
+        input, textarea {
+            background-color: #fff1d7;
             margin: 10px;
-            width: auto;
+            width: 300px; 
+            border-radius: 10px;
+            padding: 10px; 
+        }
+        button {
+            background-color: #fff1d7;
+            margin: 10px;
+            padding: 10px 20px; 
             border-radius: 10px;
         }
-        textarea {
-            margin: 10px;
-            resize: none;
+        .wordsLi {
+            background-color: rgb(250, 221, 183);
+            border: 1px solid rgba(34, 60, 80, 0.2);
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            padding: 10px;
+        }
+        li {
+            list-style: none;
+            list-style-type: none;
+            margin-top: 5px;
+            margin-right: 3vw;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <input type="text" id="wordName" placeholder="Слово">
-        <textarea name="wordDescription" id="wordDescription"></textarea>
+        <textarea name="wordDescription" id="wordDescription" rows="4" placeholder="Описание"></textarea>
         <button id="addWord">Добавить</button>
+        <h2>Словарь</h2>
         <ul id="wordList"></ul>
     </div>
     <script>
         const wordNameInput = document.getElementById('wordName');
         const wordDescriptionInput = document.getElementById('wordDescription');
-        const addWord = document.getElementById('addWord');
-        const addWwordList = document.getElementById('wordList');
+        const addWordButton = document.getElementById('addWord');
+        const wordList = document.getElementById('wordList');
 
         function addWord() {
             const name = wordNameInput.value.trim();
@@ -54,18 +78,20 @@
                 return;
             }
 
-            const li = document.createElement(li);
-            li.className = 'wordList'
+            const li = document.createElement('li'); 
+            li.className = 'wordList';
             li.innerHTML = 
-            `<div class="wordsLi">
-             <h3>Словарь</h3>
-             <p>${name} - ${description}</p>
-            </div`
+                `<div class="wordsLi">
+                    <p>Слово: ${name} - ${description}</p>
+                </div>` 
 
             wordList.appendChild(li);
 
+            wordNameInput.value = '';
+            wordDescriptionInput.value = '';
         }
-        addWord.onclick = addWord;
+
+        addWordButton.onclick = addWord; 
     </script>
 </body>
 </html>
